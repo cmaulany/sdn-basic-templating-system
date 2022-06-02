@@ -1,5 +1,5 @@
 .key-value-input-container {
-    border-left: 2px solid black;
+    border-left: 2px solid #000;
     margin-left: 1em;
     padding-left: 2px;
 }
@@ -9,7 +9,3 @@
     padding: 0;
     margin: 0;
 }
-
-/* .child-container {
-    margin-left: 1.5em;
-} */

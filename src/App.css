@@ -1,0 +1,16 @@
+h4 {
+    margin: 0;
+    margin-top: 1em;
+}
+
+body {
+    padding: 1em;
+}
+
+button {
+    border-radius: 2px;
+    border: 1px solid #333;
+    background: rgb(0, 162, 255);
+    color: #333;
+    cursor: pointer;
+}

@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import KeyValueInput from './components/KeyValueInput/KeyValueInput';
 import data from "./data.json";
+import "./App.css";
 
 const lookup = (variables, path) => {
   if (typeof path === "string") {
@@ -11,7 +12,13 @@ const lookup = (variables, path) => {
     return variables;
   }
 
-  return lookup(variables[path[0]], path.slice(1));
+  const [key, ...rest] = path;
+
+  if (variables.hasOwnProperty(key)) {
+    return lookup (variables[key], rest);
+  }
+
+  return "[Missing variable]";
 };
 
 const replace = (input, variables) => Object.entries(input).reduce(

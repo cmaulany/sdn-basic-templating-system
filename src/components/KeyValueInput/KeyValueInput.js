@@ -102,18 +102,20 @@ export default function KeyValueInput({
                                 onChange={event => handleChangeValue(index, event.target.value)}
                                 disabled={disabled}
                             />
-                            {!disabled &&
+                            {!disabled && <>
+                                &nbsp;
                                 <button onClick={() => handleRemove(index)}>
                                     -
                                 </button>
-                            }
+                            </>}
                         </>}
                         {value !== "object" && typeof value === "object" && <>
-                            {!disabled &&
+                            {!disabled && <>
+                                &nbsp;
                                 <button onClick={() => handleRemove(index)}>
                                     -
                                 </button>
-                            }
+                            </>}
                             <KeyValueInput
                                 value={value}
                                 onChange={event => handleChangeValue(index, event.target.value)}
