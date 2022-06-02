@@ -1,0 +1,40 @@
+{
+    "variables": {
+        "earth": {
+            "asia": {
+                "japan": "tokyo"
+            },
+            "europe": {
+                "netherlands": {
+                    "amsterdam": "rokin",
+                    "rotterdam": "blaak"
+                },
+                "france": "paris"
+            },
+            "us": {
+                "california": "los_angeles"
+            }
+        },
+        "moon": {
+            "west": "russel"
+        }
+    },
+    "input": {
+        "europe": {
+            "location1": "$earth.europe.france",
+            "location9": "berlin",
+            "location2": {
+                "netherlands": "$earth.europe.netherlands"
+            },
+            "location3": {
+                "netherlands": {
+                    "amsterdam": "$earth.europe.netherlands.amsterdam"
+                }
+            }
+        },
+        "us": {
+            "location10": "$earth.us.california"
+        },
+        "space": "$moon.west"
+    }
+}

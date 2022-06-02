@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
-import KeyValueInput from './components/KeyValueInput';
+import KeyValueInput from './components/KeyValueInput/KeyValueInput';
+import data from "./data.json";
 
 const lookup = (variables, path) => {
   if (typeof path === "string") {
@@ -15,8 +16,10 @@ const lookup = (variables, path) => {
 
 const replace = (input, variables) => Object.entries(input).reduce(
   (result, [key, value]) => {
-    if (value.startsWith("$")) {
+    if (typeof value === "string" && value.startsWith("$")) {
       result[key] = lookup(variables, value.slice(1));
+    } else if (typeof value === "object") {
+      result[key] = replace(value, variables);
     } else {
       result[key] = value;
     }
@@ -26,15 +29,9 @@ const replace = (input, variables) => Object.entries(input).reduce(
 );
 
 function App() {
-  const [variables, setVariables] = useState({
-    "california": "los_angeles",
-    "netherlands": "amsterdam"
-  });
+  const [variables, setVariables] = useState(data.variables);
 
-  const [input, setInput] = useState({
-    "location1": "los_angeles",
-    "location2": "$germany"
-  });
+  const [input, setInput] = useState(data.input);
 
   const result = useMemo(() => replace(input, variables), [variables, input]);
 
