@@ -21,7 +21,7 @@ export default function KeyValueInput({
                 name,
                 value: Object.fromEntries(newEntries)
             }
-        })
+        });
     };
 
     const handleChangeValue = (index, inputValue) => {
@@ -37,7 +37,7 @@ export default function KeyValueInput({
                 name,
                 value: Object.fromEntries(newEntries)
             }
-        })
+        });
     };
 
     const handleAddValue = () => {
@@ -56,7 +56,7 @@ export default function KeyValueInput({
                     [name]: "newValue"
                 }
             }
-        })
+        });
     };
 
     const handleAddLevel = () => {
@@ -68,7 +68,7 @@ export default function KeyValueInput({
                     "newKey": {}
                 }
             }
-        })
+        });
     };
 
     const handleRemove = (index) => {
@@ -79,7 +79,7 @@ export default function KeyValueInput({
                 value: Object.fromEntries(newEntries)
             }
         });
-    }
+    };
 
     return (
         <div className="key-value-input-container">
